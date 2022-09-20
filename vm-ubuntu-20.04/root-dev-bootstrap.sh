@@ -12,6 +12,9 @@ sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any m
 #apt-get update
 #apt-get install atom
 
+sudo sed -i "s@http://.*archive.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
+sudo sed -i "s@http://.*security.ubuntu.com@https://mirrors.tuna.tsinghua.edu.cn@g" /etc/apt/sources.list
+
 apt-get update
 
 KERNEL=$(uname -r)

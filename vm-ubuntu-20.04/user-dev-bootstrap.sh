@@ -93,10 +93,13 @@ move_usr_local_lib_python3_from_site_packages_to_dist_packages() {
     ls -lrt ${DST_DIR}
 }
 
+git config --global http.proxy socks5://10.0.2.2:10810
+git config --global https.proxy socks5://10.0.2.2:10810
+
 find /usr/lib /usr/local $HOME/.local | sort > $HOME/usr-local-1-before-protobuf.txt
 
 # --- Protobuf --- #
-git clone https://github.com/google/protobuf.git
+git clone https://github.com/protocolbuffers/protobuf.git
 cd protobuf
 git checkout ${PROTOBUF_COMMIT}
 ./autogen.sh

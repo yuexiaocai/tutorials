@@ -3,6 +3,9 @@
 # Print script commands and exit on errors.
 set -xe
 
+git config --global http.proxy socks5://10.0.2.2:10810
+git config --global https.proxy socks5://10.0.2.2:10810
+
 # --- Mininet --- #
 MININET_COMMIT="aa0176fce6fb718a03474f8719261b07b670d30d"  # 2022-Apr-02
 git clone https://github.com/mininet/mininet mininet
